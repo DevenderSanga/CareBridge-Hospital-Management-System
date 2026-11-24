@@ -224,7 +224,11 @@ function Navbar({ role, user, onMenuClick, onLogout }) {
                                 className="dropdown-action"
                                 onClick={() => {
                                     closeDropdowns();
-                                    navigate(`/${role}/profile`);
+                                    navigate(
+                                        role === "admin"
+                                            ? "/admin/settings"
+                                            : `/${role}/profile`
+                                    );
                                 }}
                             >
                                 <UserRound size={17} />
