@@ -95,7 +95,6 @@ function Navbar({ role, user, onMenuClick, onLogout }) {
 
                 <div className="navbar-heading">
                     <span className="navbar-hospital-name">{hospitalName}</span>
-                    <h2>{pageTitles[role] || "Dashboard"}</h2>
                     <p>Welcome back, {displayName}</p>
                 </div>
 
