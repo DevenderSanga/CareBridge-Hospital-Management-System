@@ -1,0 +1,225 @@
+.dashboard-sidebar {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    position: relative;
+    z-index: 100;
+    transition: transform 0.25s ease;
+}
+
+/* BRAND */
+
+.sidebar-brand {
+    height: var(--header-height);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    border-bottom: 1px solid var(--border);
+}
+
+.sidebar-logo {
+    width: 41px;
+    height: 41px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.sidebar-brand-text h2 {
+    font-size: 19px;
+    color: var(--primary);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.sidebar-brand-text span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+/* ROLE */
+
+.sidebar-role {
+    margin: 20px 16px 8px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border-radius: 9px;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.role-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--secondary);
+}
+
+/* NAVIGATION */
+
+.sidebar-navigation {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px 14px 20px;
+}
+
+.sidebar-section {
+    margin-bottom: 24px;
+}
+
+.sidebar-section-title {
+    padding: 0 10px;
+    margin-bottom: 10px;
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.sidebar-link {
+    width: 100%;
+    min-height: 43px;
+    padding: 10px 12px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+    background: var(--surface-secondary);
+    color: var(--primary);
+}
+
+.sidebar-link.active {
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.sidebar-link svg {
+    flex-shrink: 0;
+}
+
+/* SIDEBAR FOOTER */
+
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 17px 20px;
+    border-top: 1px solid var(--border);
+}
+
+.sidebar-footer-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.sidebar-footer strong {
+    display: block;
+   color: var(--primary);
+    font-size: 12px;
+}
+
+.sidebar-footer span {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.sidebar-close {
+    display: none;
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+}
+
+/* RTL */
+
+[dir="rtl"] .dashboard-sidebar {
+    border-right: none;
+    border-left: 1px solid var(--border);
+}
+
+[dir="rtl"] .sidebar-link {
+    text-align: right;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .dashboard-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 270px;
+        min-width: 270px;
+        transform: translateX(-100%);
+    }
+
+    .dashboard-sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+
+    .sidebar-close {
+        display: flex;
+        align-items: center;
+    }
+
+    [dir="rtl"] .dashboard-sidebar {
+        left: auto;
+        right: 0;
+        transform: translateX(100%);
+    }
+
+    [dir="rtl"] .dashboard-sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+}
+
+
+.sidebar-link-disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.sidebar-link-disabled:hover {
+    background: transparent;
+    color: var(--text-secondary);
+}
+
+.sidebar-footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--text-primary);
+    font-size: 12px;
+}
